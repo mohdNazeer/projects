@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="currency converter.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="container">
+            <form action="">
+                <h2>Currency Converter</h2>
+                <div id="content-area">
+                    <div id="item1">
+                        <p>Enter amount</p>
+                        <input type="text" id="inp1" value="1">
+                    </div>
+                    <div id="item2">
+                        <div id="sec1">
+                            <p>From</p>
+                            <div id="sec1-item" class="sec-item">
+                                <img src="https://flagsapi.com/US/flat/64.png">
+                                <select id="select1" onchange="displayImg(0)">
+                                </select>
+                            </div> 
+                        </div>
+                        <div id="sec2">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div id="sec3">
+                            <p>To</p>
+                            <div id="sec2-item" class="sec-item">
+                                <img src="https://flagsapi.com/IN/flat/64.png">
+                                <select id="select2" onchange="displayImg(1)">
+                                </select>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p id="item3">1USD=80INR</p>
+                    <div id="item4">
+                        <input id="inp2" value="Get Exchange Rate" type="submit">
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <script src="object.js"></script>
+    <script src="currency converter.js"></script>
+</body>
+</html>

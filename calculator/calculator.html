@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js"></script>
+</head>
+<body>
+    <div id="main-container">
+        <div id="container">
+            <div id="sec1">
+                <p id="sec1-p1"></p>
+            </div>
+            <div id="sec2">
+                <div id="item1" class="items operators" onclick="all_clear()"><p>AC</p></div>
+                <div id="item2" class="items operators" onclick="dlt()"><p>DEL</p></div>
+                <div id="item3" class="items operators" onclick="f1('%')"><p>%</p></div>
+                <div id="item4" class="items operators" onclick="f1('/')"><p>/</p></div>
+                <div id="item5" class="items" onclick="f1(7)"><p>7</p></div>
+                <div id="item6" class="items" onclick="f1(8)"><p>8</p></div>
+                <div id="item7" class="items" onclick="f1(9)"><p>9</p></div>
+                <div id="item8" class="items operators" onclick="f1('*')"><p>*</p></div>
+                <div id="item9" class="items" onclick="f1(4)"><p>4</p></div>
+                <div id="item10" class="items" onclick="f1(5)"><p>5</p></div>
+                <div id="item11" class="items" onclick="f1(6)"><p>6</p></div>
+                <div id="item12" class="items operators" onclick="f1('-')"><p>-</p></div>
+                <div id="item13" class="items" onclick="f1(1)"><p>1</p></div>
+                <div id="item14" class="items" onclick="f1(2)"><p>2</p></div>
+                <div id="item15" class="items" onclick="f1(3)"><p>3</p></div>
+                <div id="item16" class="items operators" onclick="f1('+')"><p>+</p></div>
+                <div id="item17" class="items" onclick="f1('00')"><p>00</p></div>
+                <div id="item18" class="items" onclick="f1(0)"><p>0</p></div>
+                <div id="item19" class="items" onclick="f1('.')"><p>.</p></div>
+                <div id="item20" class="items" onclick="result()"><p>=</p></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

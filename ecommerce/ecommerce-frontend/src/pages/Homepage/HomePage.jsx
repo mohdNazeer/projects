@@ -2,7 +2,7 @@
 import React from 'react'
 import '../../index.css'
 import axios from 'axios'
-import { Product } from './product'
+import { Product } from './Product'
 import { useState, useEffect } from 'react'
 import './HomePage.css'
 import { Header } from '../../components/Header'
@@ -10,7 +10,7 @@ export function HomePage({ cart,fetchCart }) {
     const [products, setProducts] = useState([])
     useEffect(() => {
         const getHomeData = async () => {
-            const response=await axios.get('/api/products')
+            const response=await axios.get('https://mohdnazeer-backend.onrender.com/api/products')
                     setProducts(response.data)
                 }
         getHomeData()

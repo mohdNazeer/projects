@@ -12,7 +12,7 @@ import { PageNotFound } from './pages/PageNotFound'
 function App() {
   const [cart,setCart]=useState([])
   const fetchCart=async()=>{
-      const response=await axios.get('/api/cart-items?expand=product')
+      const response=await axios.get('https://mohdnazeer-backend.onrender.com/api/cart-items?expand=product')
       setCart(response.data)
     }
   useEffect(()=>{

@@ -13,16 +13,16 @@ export function CheckoutPage({ cart, fetchCart }) {
     const [paymentSummary, setPaymentSummary] = useState(null)
     useEffect(() => {
         const fetchCheckoutData = async () => {
-            let response = await axios.get('/api/delivery-options?expand=estimatedDeliveryTime')
+            let response = await axios.get('https://mohdnazeer-backend.onrender.com/api/delivery-options?expand=estimatedDeliveryTime')
             setDeliveryOptions(response.data)
-            response = await axios.get('/api/payment-summary')
+            response = await axios.get('https://mohdnazeer-backend.onrender.com/api/payment-summary')
             setPaymentSummary(response.data)
         }
         fetchCheckoutData()
     }, [cart])
     const navigate = useNavigate()
     const placeOrder = async () => {
-        await axios.post(`/api/orders`)
+        await axios.post(`https://mohdnazeer-backend.onrender.com/api/orders`)
         await fetchCart()
         navigate('/orders')
     }
@@ -42,7 +42,7 @@ export function CheckoutPage({ cart, fetchCart }) {
                                 return deliveryOption.id === cartItem.deliveryOptionId
                             })
                             const deleteCartItem = async () => {
-                                await axios.delete(`/api/cart-items/${cartItem.productId}`)
+                                await axios.delete(`https://mohdnazeer-backend.onrender.com/api/cart-items/${cartItem.productId}`)
                                 await fetchCart()
                             }
 
@@ -84,7 +84,7 @@ export function CheckoutPage({ cart, fetchCart }) {
                                             </div>
                                             {deliveryOptions.map((deliveryOption) => {
                                                 const updateDeliveryOption = async () => {
-                                                    await axios.put(`/api/cart-items/${cartItem.productId}`, {
+                                                    await axios.put(`https://mohdnazeer-backend.onrender.com/api/cart-items/${cartItem.productId}`, {
                                                         deliveryOptionId: deliveryOption.id
                                                     })
                                                     fetchCart()

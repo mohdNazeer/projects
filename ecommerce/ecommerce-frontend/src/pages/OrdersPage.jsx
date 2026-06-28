@@ -8,7 +8,7 @@ import { Header } from "../components/Header"
 import './OrdersPage.css'
 import '../index.css'
 import buyAgain from '../assets/images/icons/buy-again.png'
-export function OrdersPage({ cart }) {
+export function OrdersPage({ cart,fetchCart }) {
     const [orders, setOrders] = useState([])
     useEffect(() => {
         const fetchOrdersData = async () => {
@@ -66,7 +66,13 @@ export function OrdersPage({ cart }) {
                                                     <div className="product-quantity">
                                                         Quantity: {orderProduct.quantity}
                                                     </div>
-                                                    <button className="buy-again-button button-primary">
+                                                    <button className="buy-again-button button-primary" onClick={async () => {
+                                                        await axios.post('https://mohdnazeer-backend.onrender.com/api/cart-items', {
+                                                            productId: orderProduct.productId,
+                                                            quantity: orderProduct.quantity
+                                                        })
+                                                        fetchCart()
+                                                    }}>
                                                         <img className="buy-again-icon" src={buyAgain} />
                                                         <span className="buy-again-message">Add to Cart</span>
                                                     </button>
@@ -87,7 +93,7 @@ export function OrdersPage({ cart }) {
                         )
                     })}
                 </div>
-            </div>
+            </div >
         </>
     )
 }

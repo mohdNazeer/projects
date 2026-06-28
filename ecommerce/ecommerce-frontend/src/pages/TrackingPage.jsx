@@ -5,6 +5,7 @@ import dayjs from "dayjs"
 import { useEffect} from "react"
 import { Header } from "../components/Header"
 import { useParams } from "react-router"
+import { Link } from "react-router"
 import './TrackingPage.css'
 import '../index.css'
 export function TrackingPage({cart}) {
@@ -32,9 +33,9 @@ export function TrackingPage({cart}) {
 
             <div className="tracking-page">
                 <div className="order-tracking">
-                    <a className="back-to-orders-link link-primary" href="/orders">
+                    <Link className="back-to-orders-link link-primary" to="/orders">
                         View all orders
-                    </a>
+                    </Link>
 
                     <div className="delivery-date">
                         {dayjs(orderProduct.estimatedDeliveryTimeMs).format('dddd, MMMM D')}

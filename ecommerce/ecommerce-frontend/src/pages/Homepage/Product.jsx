@@ -2,7 +2,7 @@
 import React from "react"
 import { useState } from "react"
 import axios from "axios"
-import Checkmark from '../../assets/images/icons/Checkmark.png'
+import Checkmark from '../../assets/images/icons/checkmark.png'
 import {formatMoney} from '../../utils/formatMoney'
 export function Product({product,fetchCart}){
       const [quantity,setQuantity] = useState(1)

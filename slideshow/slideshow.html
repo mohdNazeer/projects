@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="slideshow.css">
+</head>
+<body>
+    <div id="main-container">
+        <div id="container1">
+            <img src="img1.jpg" id="image">
+            <a id="left-arrow" onclick="f3(-1)">&#10094</a>
+            <a id="right-arrow" onclick="f2(+1)">&#10095</a>
+        </div>
+        <div id="container2">
+            <div class="dots" onclick="f1(1)"></div>
+            <div class="dots" onclick="f1(2)"></div>
+            <div class="dots" onclick="f1(3)"></div>
+            <div class="dots" onclick="f1(4)"></div>
+        </div>
+    </div>
+    <script src="slideshow.js"></script>
+</body>
+</html>

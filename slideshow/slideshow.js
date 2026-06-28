@@ -1,0 +1,60 @@
+z=1
+i=0
+dot=document.getElementsByClassName("dots");
+dot[i].style.backgroundColor="#717171"
+function f1(x)/*it is for dots*/
+{
+    img=document.getElementById("image");
+    dot=document.getElementsByClassName("dots");
+    for(i=0;i<=3;i++)
+        if(i==x-1)
+            dot[i].style.backgroundColor="#717171"
+        else
+            dot[i].style.backgroundColor="#bbb"
+    if(x==1)
+        img.src="img1.jpg"
+    if(x==2)
+        img.src="img2.jpg"
+    if(x==3)
+        img.src="img3.jpg"
+    if(x==4)
+        img.src="img4.jpg"
+}
+function f2(y)/*it is for right arrow*/
+{
+    if(z!=4)
+        z=z+y;
+    else
+        z=1
+    img=document.getElementById("image")
+    if(z==1)
+        img.src="img1.jpg"
+    else
+        if(z==2)
+            img.src="img2.jpg"
+        else
+            if(z==3)
+                img.src="img3.jpg"
+            else
+                img.src="img4.jpg"
+    f1(z)
+}
+function f3(a)/*it is for left arrow*/
+{
+    if(z==1)
+        z=4;
+    else
+        z=z+a;
+    img=document.getElementById("image")
+    if(z==1)
+        img.src="img1.jpg"
+    else
+        if(z==2)
+            img.src="img2.jpg"
+        else
+            if(z==3)
+                img.src="img3.jpg"
+            else
+                img.src="img4.jpg"
+    f1(z)
+}

@@ -10,7 +10,7 @@ const RegisterPage = () => {
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm()
     async function onSubmit(data) {
         try {
-            const res = await axios.post("http://localhost:3000/api/auth/register", data, {withCredentials:true})
+            const res = await axios.post("https://notes-backend-bfqv.onrender.com/api/auth/register", data, {withCredentials:true})
             localStorage.setItem("accessToken",res.data.accessToken)
             navigate("/homepage")
         }

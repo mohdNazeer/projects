@@ -14,7 +14,7 @@ const Navbar = ({ setMessage,setNotes }) => {
   const isAuthPage = pathname === "/login" || pathname === "/"
   async function logout() {
     try {
-      await axios.post("http://localhost:3000/api/auth/logout", {}, { withCredentials: true })
+      await axios.post("https://notes-backend-bfqv.onrender.com/api/auth/logout", {}, { withCredentials: true })
       localStorage.removeItem("accessToken");
       navigate("/login")
     }

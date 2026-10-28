@@ -1,0 +1,32 @@
+#nav-container{
+    /* border:2px solid red; */
+    height:50px;
+    justify-content: space-between;
+    background-color: #111827;
+    padding-inline: 5px;
+}
+#nav-search{
+    width: 80%;
+    height: 25px;
+    padding-left: 4px;
+    box-sizing: border-box;
+    border: none;
+}
+#nav-search:focus{
+    outline: none;
+    border:none;
+}
+.hide{
+    display: none !important;
+}
+#search-container{
+    width:43vw;
+}
+.search-icon-container{
+    width:20%;
+    height:25.5px;
+    justify-content: center;
+    background-color: white;
+    border-radius: 1px;
+    border: 1px solid black;
+}

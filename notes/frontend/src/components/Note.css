@@ -1,0 +1,18 @@
+#note-container{
+    padding-left: 7px;
+    width:95vw;
+    min-height:25vh;
+    align-items: start;
+    flex-direction: column;
+    background-color: #111827;
+    color: white;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+#button1{
+    background-color: #ca8a04;
+    margin-right: 7px;
+}
+.note-element{
+    margin-block: 5px;
+}

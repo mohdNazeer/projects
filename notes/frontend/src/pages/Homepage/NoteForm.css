@@ -1,0 +1,23 @@
+.note-form-container{
+    height: 35vh;
+    width:80vw;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #1f2937;
+    color: white;
+}
+#note-outer-div{
+    position:fixed;
+    inset: 0;
+    flex-direction: column;
+    justify-content: center;
+}
+#note-form-b1{
+    background-color:  #2563eb;
+}
+
+@media (min-width:1024px){
+    .note-form-container{
+        width:25vw;
+    }
+}

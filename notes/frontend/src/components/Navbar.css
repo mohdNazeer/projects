@@ -24,6 +24,10 @@
     border-radius: 1px;
     border:none;
     border-left: 1px solid black;
+
+    color: black;
+    -webkit-appearance: none;
+    appearance: none;
 }
 #nav-search:focus{
     outline: none;

@@ -45,18 +45,19 @@ const NoteForm = ({ onCancel, api, buttonCaption, noteId, setNotes }) => {
                 <div style={{ height: "5px" }}>
                     {message && <p style={{ color: "red" }}>{message}</p>}
                 </div>
-                <p>Create note</p>
+                <h3>Create note</h3>
                 <div>
                     <input
+                        style={{height:"30px"}}
                         type="text"
-                        placeholder=" Note title"
+                        placeholder="Note title"
                         {...register("title", { required: "title is required" })}
                     />
                     {errors.title && <p style={{ color: "white" }} className="error-message">{errors.title.message}</p>}
                 </div>
                 <div>
                     <textarea
-                        placeholder=" Note description"
+                        placeholder="Note description"
                         {...register("description", { required: "description is required" })}
                     />
                     {errors.description && (
@@ -75,7 +76,7 @@ const NoteForm = ({ onCancel, api, buttonCaption, noteId, setNotes }) => {
                     >
                         {buttonCaption}
                     </button>
-                    <button onClick={onCancel} style={{ width: "50px", height: "25px" }}>Cancel</button>
+                    <button className="button" id="note-form-b2" onClick={onCancel}>Cancel</button>
                 </div>
             </form>
         </div>

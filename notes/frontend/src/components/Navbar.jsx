@@ -44,7 +44,7 @@ const Navbar = ({ setMessage,setNotes }) => {
   }, [searchText]);
   return (
     <div className="flex" id="nav-container">
-      <p style={{ color: "white" }}>Notes App</p>
+      <p style={{ color: "white" }} id="nav-logo">Notes App</p>
       <form action="" id="search-container" className="flex" onSubmit={handleSubmit(onSubmit)}>
         <input id="nav-search" className={isAuthPage ? "hide" : ""} type="text" placeholder="search notes" {...register("searchText")} />
         <button type="submit" className={`flex search-icon-container ${isAuthPage ? "hide" : ""}`} disabled={isSubmitting}>

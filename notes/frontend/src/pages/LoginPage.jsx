@@ -25,24 +25,26 @@ const LoginPage = () => {
                 {message && <p style={{ color: "red" }}>{message}</p>}
             </div>
             <form className="flex" id="login-container" onSubmit={handleSubmit(onSubmit)}>
-                <p>Login</p>
+                <h3>Login</h3>
                 <div>
                     <input
+                        className="auth-input"
                         type='text'
-                        placeholder=' username or email'
+                        placeholder='username or email'
                         {...register("identifier", { required: "username or email is required" })}
                     />
                     {errors.identifier && <p className="error-message">{errors.identifier.message}</p>}
                 </div>
                 <div>
                     <input
+                        className="auth-input"
                         type='password'
-                        placeholder=' password'
+                        placeholder='password'
                         {...register("password",{required:"password is required"})}
                     />
                     {errors.password && <p className="error-message">{errors.password.message}</p>}
                 </div>
-                <button className='flex button' id="login-button" disabled={isSubmitting}>Login</button>
+                <button className='flex auth-button'  disabled={isSubmitting}>Login</button>
                 <p>Don't have an account?<Link to="/" id="register-text"> Register</Link></p>
             </form>
         </>

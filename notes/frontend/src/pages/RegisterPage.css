@@ -3,14 +3,10 @@
     margin-top: 30px;
     flex-direction: column;
     justify-content: space-around;
-    height: 43vh;
+    height: 40vh;
     width:85vw;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
-#register-button{
-    background-color: #2563eb;
-    width:168px;
 }
 #login-text{
     color: #2563eb;

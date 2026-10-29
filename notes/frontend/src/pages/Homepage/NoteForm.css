@@ -15,6 +15,10 @@
 #note-form-b1{
     background-color:  #2563eb;
 }
+#note-form-b2{
+    background-color: white;
+    color:black;
+}
 
 @media (min-width:1024px){
     .note-form-container{

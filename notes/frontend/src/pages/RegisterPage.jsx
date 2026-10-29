@@ -25,32 +25,35 @@ const RegisterPage = () => {
                 {message && <p style={{color:"red"}}>{message}</p>}
             </div>
             <form className="flex" id="register-container" onSubmit={handleSubmit(onSubmit)}>
-                <p>Register</p>
+                <h3>Register</h3>
                 <div>
                     <input
+                        className="auth-input"
                         type='text'
-                        placeholder=' username'
+                        placeholder='username'
                         {...register("username", { required: "username is required", minLength: { value: 3, message: "min-length should be 3" } })}
                     />
                     {errors.username && <p className="error-message">{errors.username.message}</p>}
                 </div>
                 <div>
                     <input
+                        className="auth-input"
                         type='email'
-                        placeholder=' email'
+                        placeholder='email'
                         {...register("email", { required: "email is required" })}
                     />
                     {errors.email && <p className="error-message">{errors.email.message}</p>}
                 </div>
                 <div>
                     <input
+                        className="auth-input"
                         type='password'
-                        placeholder=' password'
+                        placeholder='password'
                         {...register("password", { required: "password is required" })}
                     />
                     {errors.password && <p className="error-message">{errors.password.message}</p>}
                 </div>
-                <button className='flex button' id="register-button" disabled={isSubmitting}> Register</button>
+                <button className='flex auth-button'  disabled={isSubmitting}>Register</button>
                 <p>Already have an account?<Link to="/login" id="login-text"> Login</Link></p>
             </form>
         </>

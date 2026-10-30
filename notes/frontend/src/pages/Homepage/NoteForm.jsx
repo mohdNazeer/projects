@@ -45,7 +45,7 @@ const NoteForm = ({ onCancel, api, buttonCaption, noteId, setNotes }) => {
                 <div style={{ height: "5px" }}>
                     {message && <p style={{ color: "red" }}>{message}</p>}
                 </div>
-                <h3>Create note</h3>
+                <h3>{buttonCaption} note</h3>
                 <div>
                     <input
                         style={{height:"30px"}}

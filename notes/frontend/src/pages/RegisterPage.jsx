@@ -21,7 +21,7 @@ const RegisterPage = () => {
 
     if (loading) return <>
     <Navbar setMessage="" setNotes="" />
-    <p style={{fontWeight:"bold"}}>Loading...</p>
+    <p style={{fontWeight:"bold";paddingTop:"5px"}}>Loading...</p>
     </>
     if (loggedIn) return navigate("/homepage")
     async function onSubmit(data) {

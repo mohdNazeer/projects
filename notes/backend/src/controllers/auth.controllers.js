@@ -152,4 +152,10 @@ async function refreshToken(req, res) {
         res.status(401).json({message:"refresh token is not valid"})
     }
 }
-module.exports = { register, login, logout, refreshToken }
+async function isLoggedIn(req,res){
+    const refreshToken = req.cookies.refreshToken
+    if(!refreshToken)
+        return res.status(401).json({message:"you are logout"})
+    return res.status(200).json({message:"you are login"})
+}
+module.exports = { register, login, logout, refreshToken,isLoggedIn }

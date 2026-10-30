@@ -1,6 +1,6 @@
 import axios from "axios";
 const api = axios.create({
-    baseURL: "https://notes-backend-bfqv.onrender.com/api/note"
+    baseURL: "/api/note"
 })
 api.interceptors.request.use(config => {
     const accessToken = localStorage.getItem("accessToken");
@@ -17,7 +17,7 @@ api.interceptors.response.use(
             original._retry = true;
             try {
                 const { data } = await axios.post(
-                    "https://notes-backend-bfqv.onrender.com/api/auth/refreshToken", {},
+                    "/api/auth/refreshToken", {},
                     { withCredentials: true }
                 );
 

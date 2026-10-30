@@ -1,17 +1,33 @@
 import Navbar from "../components/Navbar"
-import { useState } from "react"
-import { Link,useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import axios from "axios"
 import "./RegisterPage.css"
 const RegisterPage = () => {
-    const navigate = useNavigate()
     const [message, setMessage] = useState("")
     const { register, handleSubmit, formState: { errors, isSubmitting } } = useForm()
+    const navigate = useNavigate()
+    const [loading, setLoading] = useState(true);
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        axios
+            .post("/api/auth/isLoggedIn", {}, { withCredentials: true })
+            .then(() => setLoggedIn(true))    // refresh token hai
+            .catch(() => setLoggedIn(false))  // nahi hai
+            .finally(() => setLoading(false));
+    }, []);
+
+    if (loading) return <>
+    <Navbar setMessage="" setNotes="" />
+    <p style={{fontWeight:"bold"}}>Loading...</p>
+    </>
+    if (loggedIn) return navigate("/homepage")
     async function onSubmit(data) {
         try {
-            const res = await axios.post("https://notes-backend-bfqv.onrender.com/api/auth/register", data, {withCredentials:true})
-            localStorage.setItem("accessToken",res.data.accessToken)
+            const res = await axios.post("/api/auth/register", data, { withCredentials: true })
+            localStorage.setItem("accessToken", res.data.accessToken)
             navigate("/homepage")
         }
         catch (err) {
@@ -20,9 +36,9 @@ const RegisterPage = () => {
     }
     return (
         <>
-            <Navbar setMessage="" setNotes=""/>
-            <div style={{minHeight:"20px"}}>
-                {message && <p style={{color:"red"}}>{message}</p>}
+            <Navbar setMessage="" setNotes="" />
+            <div style={{ minHeight: "20px" }}>
+                {message && <p style={{ color: "red" }}>{message}</p>}
             </div>
             <form className="flex" id="register-container" onSubmit={handleSubmit(onSubmit)}>
                 <h3>Register</h3>
@@ -53,7 +69,7 @@ const RegisterPage = () => {
                     />
                     {errors.password && <p className="error-message">{errors.password.message}</p>}
                 </div>
-                <button className='flex auth-button'  disabled={isSubmitting}>Register</button>
+                <button className='flex auth-button' disabled={isSubmitting}>Register</button>
                 <p>Already have an account?<Link to="/login" id="login-text"> Login</Link></p>
             </form>
         </>
